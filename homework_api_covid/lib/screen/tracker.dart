@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:homework_api_covid/screen/country.dart';
 import '../utils/constants.dart';
 import 'navigation_option.dart';
+
+import 'country.dart';
 
 enum NavigationStatus {
   COUNTRY,
@@ -27,7 +30,7 @@ class _TrackerState extends State<Tracker> {
         backgroundColor: kPrimaryColor,
         elevation: 0,
         title: Text(
-          "covid-19 thailand"
+          "static covid"
         ),
         centerTitle: true,
       ),
@@ -44,8 +47,14 @@ class _TrackerState extends State<Tracker> {
                 borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(50),
                   bottomLeft: Radius.circular(50),
-                )
-              )
+                ),
+              ),
+
+              //import country.dart
+              child: AnimatedSwitcher(
+                duration:Duration(microseconds: 250),
+                child: navigationStatus == NavigationStatus.COUNTRY ? Country(): Country(),
+              ),
             ),
           ),
 

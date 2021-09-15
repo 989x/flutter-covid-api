@@ -2,30 +2,47 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import '../models/country_summary.dart';
-import '../models/country.dart';
 
 class CovidService{
 
-  // Future<List<CountrySummaryModel>> getCountrySummary(String slug) async{
-  //   final data = await http.Client().get("https://api.covid19api.com/total/dayone/country/" + slug);
+  // Future<CountrySummaryModel> getCountrySummary() async{
+  //   final data = await http.Client().get("https://api.covid19api.com/summary");
     
   //   if(data.statusCode != 200)
   //     throw Exception();
-
-  //   List<CountrySummaryModel> summaryList = (json.decode(data.body) as List).map((item) => new CountrySummaryModel.fromJson(item)).toList();
+      
+  //   CountrySummaryModel summary = new CountrySummaryModel.fromJson(json.decode(data.body));
     
-  //   return summaryList;
+  //   return summary;
   // }
 
-  // Future<List<CountryModel>> getCountryList() async{
-  //   final data = await http.Client().get("https://api.covid19api.com/countries");
-    
-  //   if(data.statusCode != 200)
-  //     throw Exception();
+  Future<CountrySummaryModel> getCountrySummary() async{
+    // final data = await http.get(Uri.parse("https://static.easysunday.com/covid-19/getTodayCases.json"));
 
-  //   List<CountryModel> countries = (json.decode(data.body) as List).map((item) => new CountryModel.fromJson(item)).toList();
+    var url = Uri.parse('https://static.easysunday.com/covid-19/getTodayCases.json');
     
-  //   return countries;
-  // }
+    final data = await http.get(url);
+    print(data.body);
 
+    CountrySummaryModel summary ;
+
+    if(data.statusCode == 200){
+      print("ok 1");
+      summary = await CountrySummaryModel.fromJson(json.decode(data.body));
+      print("ok");
+
+    } else {
+      throw Exception();
+    }
+    // print("summaryasdasda");
+
+    // CountrySummaryModel summary = await new CountrySummaryModel.fromJson(json.decode(data.body));
+    // print("ok");
+
+    return summary;
+  }
 }
+
+
+
+
