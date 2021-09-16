@@ -30,7 +30,7 @@ class _TrackerState extends State<Tracker> {
         backgroundColor: kPrimaryColor,
         elevation: 0,
         title: Text(
-          "static covid"
+          "Corona virrus in thailand"
         ),
         centerTitle: true,
       ),
@@ -65,7 +65,7 @@ class _TrackerState extends State<Tracker> {
               children: <Widget>[
 
                 NavigationOption(
-                  title: "thailand", 
+                  title: "home", 
                   selected: navigationStatus == NavigationStatus.COUNTRY, 
                   onSelected: () {
                     setState(() {

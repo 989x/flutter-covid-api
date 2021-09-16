@@ -38,11 +38,11 @@ class _CountryState extends State<Country> {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               
               Text(
-                "Corona virrus in thailand",
+                "reset all",
                 style: TextStyle(
                   color: Colors.white,
                   // fontWeight: FontWeight.bold,

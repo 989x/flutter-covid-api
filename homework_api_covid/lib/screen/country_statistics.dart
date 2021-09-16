@@ -18,30 +18,30 @@ class CountryStatistics extends StatelessWidget {
       children: <Widget>[
 
         buildCard(
-          "case",
+          "toDayCase",
           summary.todayCases,
-          summary.recovered,
+          summary.todayCases,
           kConfirmedColor
         ),
 
         buildCard(
-          "ative",
-          summary.todayCases,
-          summary.recovered,
+          "Ative",
+          summary.active,
+          summary.active,
           kActiveColor
         ),
 
         buildCard(
-          "recovered",
-          summary.todayCases,
+          "Recovered",
+          summary.recovered,
           summary.recovered,
           kRecoveredColor
         ),
 
         buildCard(
-          "death",
-          summary.todayCases,
-          summary.recovered,
+          "Death",
+          summary.deaths,
+          summary.deaths,
           kDeathColor
         ),
 
@@ -67,6 +67,7 @@ class CountryStatistics extends StatelessWidget {
       elevation: 1,
       child: Container(
         height: 100,
+        width: 200,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
           children: <Widget>[
@@ -85,32 +86,8 @@ class CountryStatistics extends StatelessWidget {
             ),
 
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      "total",
-                      style: TextStyle(
-                        color: color,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                      ),
-                    ),
-                    Text(
-                      totalCount.toString(),
-                      style: TextStyle(
-                        color: color,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28,
-                      ),
-                    ),
-
-                  ],
-
-                ),
-
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
@@ -133,7 +110,31 @@ class CountryStatistics extends StatelessWidget {
 
                   ],
 
-                )
+                ),
+
+                // Column(
+                //   crossAxisAlignment: CrossAxisAlignment.end,
+                //   children: <Widget>[
+                //     Text(
+                //       "total",
+                //       style: TextStyle(
+                //         color: color,
+                //         fontWeight: FontWeight.bold,
+                //         fontSize: 12,
+                //       ),
+                //     ),
+                //     Text(
+                //       totalCount.toString(),
+                //       style: TextStyle(
+                //         color: color,
+                //         fontWeight: FontWeight.bold,
+                //         fontSize: 28,
+                //       ),
+                //     ),
+
+                //   ],
+
+                // )
               ],
             )
           ],
