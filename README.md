@@ -4,5 +4,5 @@
 
  debug run : flutter run --no-sound-null-safety
 
-![Preview](https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/3-main.png)
-(https://github.com/SinsamutQ/homework-flutter-teacher-t-api-covid/blob/main/preview/image.png)
+![Preview](https://github.com/SinsamutQ/homework-flutter-teacher-t-api-covid/blob/main/preview/image.png)
+
