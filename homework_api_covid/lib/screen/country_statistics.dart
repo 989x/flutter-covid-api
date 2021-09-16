@@ -55,7 +55,6 @@ class CountryStatistics extends StatelessWidget {
               color: Colors.white,
               // fontWeight: FontWeight.bold,
               fontSize: 12,
-              fontFamily: 'myfont',
             ),
           ),
         ),

@@ -31,7 +31,6 @@ class _TrackerState extends State<Tracker> {
         elevation: 0,
         title: Text(
           "Corona virrus in thailand",
-          style: TextStyle(fontFamily: 'myfont'),
         ),
         centerTitle: true,
       ),
