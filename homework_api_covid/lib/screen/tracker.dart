@@ -30,7 +30,8 @@ class _TrackerState extends State<Tracker> {
         backgroundColor: kPrimaryColor,
         elevation: 0,
         title: Text(
-          "Corona virrus in thailand"
+          "Corona virrus in thailand",
+          style: TextStyle(fontFamily: 'myfont'),
         ),
         centerTitle: true,
       ),

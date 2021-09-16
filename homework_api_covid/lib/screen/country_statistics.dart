@@ -45,6 +45,8 @@ class CountryStatistics extends StatelessWidget {
           kDeathColor
         ),
 
+        SizedBox(height: 10,),
+
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
           child: Text(
@@ -52,7 +54,22 @@ class CountryStatistics extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               // fontWeight: FontWeight.bold,
-              fontSize: 14,
+              fontSize: 12,
+              fontFamily: 'myfont',
+            ),
+          ),
+        ),
+
+        SizedBox(height: 10,),
+
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+          child: Text(
+            "Developer " + summary.DevBy,
+            style: TextStyle(
+              color: Colors.white,
+              // fontWeight: FontWeight.bold,
+              fontSize: 12,
             ),
           ),
         )
