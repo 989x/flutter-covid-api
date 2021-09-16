@@ -4,3 +4,4 @@
 
  debug run : flutter run --no-sound-null-safety
 
+(https://github.com/SinsamutQ/homework-flutter-teacher-t-api-covid/blob/main/preview/image.png)
