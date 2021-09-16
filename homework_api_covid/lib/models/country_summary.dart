@@ -4,9 +4,10 @@ class CountrySummaryModel{
   final int deaths;
   final int recovered;
   final int active;
-  final String date;
+  final String UpdateDate;
+  // final String date;
 
-  CountrySummaryModel(this.country, this.todayCases, this.deaths, this.recovered, this.active, this.date);
+  CountrySummaryModel(this.country, this.todayCases, this.deaths, this.recovered, this.active, this.UpdateDate);
 
   factory CountrySummaryModel.fromJson(Map<String, dynamic> json){
     return CountrySummaryModel(
@@ -15,7 +16,8 @@ class CountrySummaryModel{
       json["deaths"],
       json["recovered"],
       json["active"],
-      json["UpdateDate"],
+      json["UpdateDate"]
+      // json["UpdateDate"],
     );
   }
   

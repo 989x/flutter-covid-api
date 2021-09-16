@@ -29,7 +29,7 @@ class CovidService{
     if(data.statusCode == 200){
       print("ok 1");
       summary = await CountrySummaryModel.fromJson(json.decode(data.body));
-      print("ok");
+      print("ok 2");
 
     } else {
       throw Exception();

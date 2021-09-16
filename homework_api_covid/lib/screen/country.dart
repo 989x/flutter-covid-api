@@ -4,6 +4,10 @@ import '../services/covid_service.dart';
 
 import '../models/country_summary.dart';
 
+import 'country_statistics.dart';
+
+import 'country_loading.dart';
+
 CovidService covidService = CovidService();
 
 class Country extends StatefulWidget {
@@ -36,6 +40,7 @@ class _CountryState extends State<Country> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
+              
               Text(
                 "Corona virrus in thailand",
                 style: TextStyle(
@@ -45,11 +50,18 @@ class _CountryState extends State<Country> {
                 ),
               ),
 
-              Icon(
-                Icons.refresh,
-                color: Colors.white,
-              )
-              
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    summary = covidService.getCountrySummary();
+                  });
+                },
+                child: Icon(
+                  Icons.refresh,
+                  color: Colors.white,
+                ),
+              ),
+
             ],
           ),
         ),
@@ -57,16 +69,26 @@ class _CountryState extends State<Country> {
         FutureBuilder(
           future: summary,
           builder: (context, snapshot) {
-            if(snapshot.hasError)
-              return Center(child: Text("Error"),);
+            if(snapshot.hasData)
+              return CountryStatistics(summary: snapshot.data as CountrySummaryModel);
+            else if (snapshot.hasError) {
+              return Text("error");
+            }
+
               print(snapshot);
             switch(snapshot.connectionState){
               case ConnectionState.waiting:
-                return Center(child: Text("Loading"),);
+                return countryLoadgin();
               default:
                 return !snapshot.hasData
                 ? Center(child: Text("Empty"),)
                 : Center(child: Text("Data is here!"),);
+
+                // : Center(child: Text(snapshot.data!.country!),);
+
+                // : CountryStatistics(
+                //   summary: snapshot.data,
+                // );
             }
           }
         ),
