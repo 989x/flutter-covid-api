@@ -157,7 +157,6 @@ class CountryStatistics extends StatelessWidget {
         ),
       ),
     );
-  }
-  
+  } 
 
 }

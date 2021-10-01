@@ -42,7 +42,3 @@ class CovidService{
     return summary;
   }
 }
-
-
-
-
