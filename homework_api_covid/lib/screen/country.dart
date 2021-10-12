@@ -78,7 +78,7 @@ class _CountryState extends State<Country> {
               print(snapshot);
             switch(snapshot.connectionState){
               case ConnectionState.waiting:
-                return countryLoadgin();
+                return countryLoading();
               default:
                 return !snapshot.hasData
                 ? Center(child: Text("Empty"),)
