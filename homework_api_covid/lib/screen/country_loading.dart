@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:shimmer/shimmer.dart';
 
-class countryLoadgin extends StatelessWidget {
+class countryLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
